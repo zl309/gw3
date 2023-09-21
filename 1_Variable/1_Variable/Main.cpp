@@ -30,8 +30,6 @@ int main()
 	// 
 	
 
-
-
 	signed char c; // -128~127 // 1Byte
 
 	unsigned char uc; // 0~255 // 1Byte
@@ -145,7 +143,7 @@ int main()
 	/* 주석 */
 
 
-	//자주쓰는 단축키
+	// 자주쓰는 단축키
 	// 지정한 구문 주석 : ctrl + k -> c
 	// 지정한 주석 해제 : ctrl + k -> u
 	// alt + drag : 부분 영역 지정
@@ -174,13 +172,23 @@ int main()
 	int nResult = (10 == 11) ? 100 : 50;
 
 	//
-	unsigned int sec = 987654321;//초
-	unsigned int day = 0, min = 0, hour = 0, sec = 0;
-	day = 0;
-	hour = 0;
-	min = 0;
-	sec = 0;
+	unsigned int total_sec = 987654321;//초
+	unsigned int day = 0, min = 0, hour = 0 , sec = 0 ;
+	
+	/*min = sec / 60;
+	hour = min / 60;
+	day = hour / 24;
+	*/
+	
+	min = total_sec / 60;
+	sec = total_sec % 60;
 
+	hour	= min / 60;
+	min		= min % 60;
+	day		= hour / 24;
+	hour	= hour % 24;
+	
+	
 
 	system("pause");
 }

@@ -174,6 +174,7 @@ int main()
 	//
 	unsigned int total_sec = 987654321;//ÃÊ
 	unsigned int day = 0, min = 0, hour = 0 , sec = 0 ;
+	// sec ´Â 0~59
 	
 	/*min = sec / 60;
 	hour = min / 60;
@@ -185,10 +186,18 @@ int main()
 
 	hour	= min / 60;
 	min		= min % 60;
+
 	day		= hour / 24;
 	hour	= hour % 24;
 	
-	
+	/*
+	sec = total_sec % 60;
+	min = (total_sec / 60) % 60;
+	hour = ((total_sec / 60) / 60) % 24;
+	day = (((total_sec / 60)/60)/24);
+	*/
+
+
 
 	system("pause");
 }

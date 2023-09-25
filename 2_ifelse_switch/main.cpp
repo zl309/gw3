@@ -65,18 +65,18 @@ int main()
 		 */
 	}
 
-	//bool bResult = false;
-	//
-	//if (bResult)
+	bool bResult = false;
+	
+	if (bResult)
 
-	//{
-	//    printf("참이다.");
-	//}
+	{
+	    printf("참이다.");
+	}
 
-	//else
-	//{
-	//    printf("거짓이다.");
-	//}
+	else
+	{
+	    printf("거짓이다.");
+	}
 
 
    /* int Score = 0;

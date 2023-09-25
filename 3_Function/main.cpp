@@ -25,95 +25,126 @@ int calculatorsum(int x, int y)
 // 나머지 함수 만들기
 // calculatorremain
 
-void callfunction()
+//void callfunction()
+//{
+//	return;
+//
+//	printf("함수 호출됐다!");
+//
+//}
+//
+//int calculatorminus(int x, int y) //unsigned int 않하는 것이 좋다. 마이너스값이 나올 수 있으므로,
+//{
+//	printf("마이너스 \n");
+//	return x - y;
+//}
+//
+//int calculatormultiply(int x, int y)
+//{
+//	printf("곱하기 \n");
+//	return x * y;
+//}
+//
+//float calculatordivide (float x, float y)
+//{
+//	printf("나누기 \n");
+//	return x / y;
+//}
+//float calculatorremain (int x, int y) 
+// {
+//	 printf("나머지 \n");
+//	 return x % y;
+// }
+//
+//
+//////
+//
+//
+//
+//int Factorial(int Num)
+//{
+//	int FacNum = 1;
+//	for (int i = Num; i > 0; --i)
+//	{
+//		FacNum *= i;
+//	}
+//	return FacNum;
+//
+//}
+//
+//
+//
+//int Factorial1(int Num2)
+//{
+//
+//	int FacResult = 1;
+//	for (int i = 1; i <= Num2; ++i)
+//	{
+//		FacResult *= i;
+//	}
+//		return FacResult;
+//}
+//
+////재귀함수
+//int reFactorial(int Num)
+//{
+//	if (Num == 1)
+//	{
+//		return 1;
+//
+//	}
+//	return Num * reFactorial(Num - 1);
+//}
+//
+//int SumToN(int Num)
+//{
+//	int FacSum = 0;
+//	for (int i=1 ; i <= Num;++i)
+//	{
+//		FacSum += i;
+//	}
+//	return FacSum;
+//}
+//
+//int SumToN2(int Num)
+//{
+//	if (Num == 1)
+//	{
+//		return 1;
+//	}
+//	return Num + SumToN2(Num-1);
+//}
+
+
+//return 과 break 의 차이//
+
+int AAA()
 {
-	return;
-
-	printf("함수 호출됐다!");
-
-}
-
-int calculatorminus(int x, int y) //unsigned int 않하는 것이 좋다. 마이너스값이 나올 수 있으므로,
-{
-	printf("마이너스 \n");
-	return x - y;
-}
-
-int calculatormultiply(int x, int y)
-{
-	printf("곱하기 \n");
-	return x * y;
-}
-
-float calculatordivide (float x, float y)
-{
-	printf("나누기 \n");
-	return x / y;
-}
-float calculatorremain (int x, int y) 
- {
-	 printf("나머지 \n");
-	 return x % y;
- }
-
-
-////
-
-
-
-int Factorial(int Num)
-{
-	int FacNum = 1;
-	for (int i = Num; i > 0; --i)
+	while (1)
 	{
-		FacNum *= i;
+		printf("1st While! Start\n");
+		break;
+		printf("1st While! End\n");
 	}
-	return FacNum;
 
-}
-
-
-
-int Factorial1(int Num2)
-{
-
-	int FacResult = 1;
-	for (int i = 1; i <= Num2; ++i)
+	while (1)
 	{
-		FacResult *= i;
+		printf("2nd While! Start\n");
+		return 0;
+		printf("2nd While! End\n");
 	}
-		return FacResult;
-}
 
-//재귀함수
-int reFactorial(int Num)
-{
-	if (Num == 1)
+	while (1)
 	{
-		return 1;
-
+		printf("3rd While! Start\n");
+		break;
+		printf("3rd While! End\n");
 	}
-	return Num * reFactorial(Num - 1);
+	return 0;
+
 }
 
-int SumToN(int Num)
-{
-	int FacSum = 0;
-	for (int i=1 ; i <= Num;++i)
-	{
-		FacSum += i;
-	}
-	return FacSum;
-}
 
-int SumToN2(int Num)
-{
-	if (Num == 1)
-	{
-		return 1;
-	}
-	return Num + SumToN2(Num-1);
-}
 
 int main()
 {
@@ -167,26 +198,80 @@ int main()
 		printf("%d\n", a+=2);
 	}*/
 
-	// 10시 수업//
-	//Factorial
-	// 5 * 4 * 3 * 2 * 1 = 120;
+	//// 10시 수업//
+	////Factorial
+	//// 5 * 4 * 3 * 2 * 1 = 120;
 
-	//함수로
-	//Factorial 함수
-	printf("%d\n", Factorial(5));
-	printf("%d\n", Factorial1(4));
-	printf("%d\n", reFactorial(8));
-	printf("%d\n", SumToN(8));
-	printf("%d\n", SumToN2(8));
+	////함수로
+	////Factorial 함수
+	//printf("%d\n", Factorial(5));
+	//printf("%d\n", Factorial1(4));
+	//printf("%d\n", reFactorial(8));
+	//printf("%d\n", SumToN(8));
+	//printf("%d\n", SumToN2(8));
 
-	//1~n까지 합 구하는 함수
-	//SumToN(int Num)
-	//return (int)
+	////1~n까지 합 구하는 함수
+	////SumToN(int Num)
+	////return (int)
+	//
+	//int nResult = 1;
+
+	//int i = 1;
+	//while (i<=10)// <-조건식이 true 면 아래 코드를 실행. 
+	//				//	false 면 while 문을 종료하고 다음 코드 실행.
+
+	//{ 
+	//	nResult *= i;
+	//	i++;
+	//}
+
+	//printf("while Factorial = %d", nResult);
+
+	//while (true)
+	//{
+	//	printf("i=%d\n", i);
+	//	i++;
+	//	printf("break 실행전\n");
+	//	break; //이 명령어를 만나면 while문 종료.
+	//	printf("break 실행후\n"); //실행안됨.
+	//}
+	int i = 0, Num = 10;
+	int nResult = 0;
+
+
+
+	while (i <= Num)
+	{
+		i++;
+		if (i % 2 != 0)
+			continue; //다음 코드를 실행하지 않고 while 코드를 계속 실행.
+		
+		nResult += i;
+	}
+	printf("while if 0~Num EvenSum=%d\n", nResult);
+	//
+	int sResult = 0; 
+	for (int i = sResult ; i <= Num; i++)
+	{
+		if (i % 2 != 0)
+		{
+			continue; //다음 코드를 실행하지 않고 for 코드를 계속 실행.
+		}
+
+
+		sResult += i;
+		
+	}
+	printf("for 0~Num EvenSum=%d\n", sResult);
+
 	
+
+//0~Num 까지 짝수만 더하기
+// 
+
+	AAA();
+
 }
-
-
-
 	
 
 

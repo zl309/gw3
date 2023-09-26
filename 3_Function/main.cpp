@@ -235,10 +235,17 @@ int main()
 	//	break; //이 명령어를 만나면 while문 종료.
 	//	printf("break 실행후\n"); //실행안됨.
 	//}
+
+
+
+
+
+
+//0~Num 까지 짝수만 더하기
 	int i = 0, Num = 10;
 	int nResult = 0;
 
-
+	
 
 	while (i <= Num)
 	{
@@ -249,6 +256,24 @@ int main()
 		nResult += i;
 	}
 	printf("while if 0~Num EvenSum=%d\n", nResult);
+
+
+	int hResult = 0;
+	for (int i = hResult; i <= Num; i++)
+	{
+		if (i % 2 == 0)
+		{
+			continue; //다음 코드를 실행하지 않고 for 코드를 계속 실행.
+		}
+
+
+		hResult += i;
+
+	}
+	printf("for 0~Num 홀수=%d\n", hResult);
+
+
+
 	//
 	int sResult = 0; 
 	for (int i = sResult ; i <= Num; i++)
@@ -266,7 +291,6 @@ int main()
 
 	
 
-//0~Num 까지 짝수만 더하기
 // 
 
 	AAA();

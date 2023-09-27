@@ -54,9 +54,24 @@ int main()
 
 
 	//wchar_t 형으로 문자 입력 받기
-	wchar_t szWCharInput[19] = L"";
+
+	wchar_t szWCharInput[20] = L"";
+	//"szWCharInput" 이름을 가진
+	//"wchar_t" 변수형을
+	//[20]의 크기로 생성하고
+	//L""값을 초기값으로 넣는다.
+
 	wscanf_s(L"%ls", szWCharInput, (unsigned)_countof(szWCharInput));
+	//wcanf_s는 입력을 받는 기능을 사용하겠다.
+	//L"%ls"변수형태로 입력을 받겠다.
+	//"szWCharInput" 변수에 입력한 값을 넣어주겠다.
+	//"(unsigned)_countof(szWCharInput)"는 값을 넣을 변수의 크기
+	
 	wprintf(L"szWCharInput=%s\n", szWCharInput);
+	//wprintf는 출력을 하는 기능 사용하겠다.
+	//L"szWCharInput=%s"문자 형태로 출력하겠다.
+	//%s 위치에 szWCharInput 값을 출력하겠다.
+
 
 	//입력받은 문자열에서 'a'문자 갯수 출력
 	int	d = 0;

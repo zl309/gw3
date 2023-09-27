@@ -57,6 +57,32 @@ void BuyiPhone(ePhoneType phoneType, stPhoneShop* pPs)
 	
 }
 
+//const 연습용함수//
+//*number 받아서 화면에 출력한다.
+void printNumber(const int* number)
+{
+	//number = nullptr; //포인터 주소 값을 변경할 수 있다.
+	//*number =2;
+
+	printf("print number=%d\n", *number);
+}
+//주소값을 가져오는 &number는 변경이 불가능하다.
+void printNumber2(const int& number)
+{
+	//number = nullptr;
+	//number = 4;
+	printf("print number=%d\n", number);
+}
+
+//구조체로 사용한 예
+void printPhoneShop(const stPhoneShop* ps)
+{
+	printf("print iPhoneCnt=%d\n", ps->iPhoneCnt);
+}
+void printPhoneShop(const stPhoneShop& ps)
+{
+	printf("print iPhoneCnt=%d\n", ps.iPhoneCnt);
+}
 
 
 
@@ -157,7 +183,29 @@ int main()
 		int ABC = arrA[i];
 		arrA[i] = arrA[lowA];
 		arrA[lowA] = ABC;
-	printf("%d\n", arrA[i]);
+		printf("%d\n", arrA[i]);
 	}
 
+
+	// const 상수화
+	//	실수를 줄일 수 있어서 디버깅 횟수를 줄일 수 있다.(디버깅:버그를 찾거나 수정하는 모든 행위)
+	const int cint = 100; //상수
+
+	int value = 0;
+	int value2 = 0;
+	int* pValue = &value;
+	
+	//const int* pValue = &value; //포인터가 가리키는 내용 수정 불가, 포인터 값 수정 가능, 참조 가능
+	//int const* pValue = &value; //순서가 바뀌어도 동일하게 작동
+	//int* const pValue = &value; //포인터가 가리키는 내용 수정 가능, 포인터 값 수정 불가, 참조 가능
+	//const int* const pValue = &value; //포인터가 가리키는 내용 수정 불가, 포인터 값 수정 불가, 참조 가능
+	//int const* const pValue = &value; //포인터가 가리키는 내용 수정 불가, 포인터 값 수정 불가, 참조 가능
+
+	*pValue = 2;
+	pValue = &value2;
+	printf("pValue=%d\n", *pValue);
+
+	printNumber(&value);
+	printNumber2(value);
 }
+

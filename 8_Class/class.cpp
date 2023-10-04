@@ -114,7 +114,7 @@ public:
 	const CMyClass& operator -(const CMyClass& other)
 	{
 
-		return CMyClass(a - other.a, m_b - other.m_b, c - other.c);
+		return CMyClass(a + other.a, m_b + other.m_b, c + other.c);
 
 	}
 public:
@@ -132,21 +132,21 @@ int main()
 
 
 		int num = 100;
-		stMyStruct stTest;
+						stMyStruct stTest;
 
 		// 포인터 참조는 포인터 변수의 주소 값을 참조한다.
 		// 포인터 변수의 주소값과 포인터  가리키고 있는 주소 값은 다르다.
 
 		int* pNum = &num; // pNum  (포인터 변수 )에는 num의 주소 값이 들어간다. 즉, pNum 은 num 변수를 가리키고 있다.
-		stMyStruct* pTest = &stTest;
-		pTest->a = 0;
+						stMyStruct* pTest = &stTest;
+						pTest->a = 0;
 		printf("&pNum != &num ? %d\n", (int(&pNum) != int(&num)));
 
 		// 레퍼런스 참조는 원본 대상의 주소 값과 동일하다.
 		
 		int& refNum = num;
-		stMyStruct& refTest = stTest;
-		refTest.a = 0;
+						stMyStruct& refTest = stTest;
+						refTest.a = 0;
 		printf("&refNum == &num ? %d\n", (int(&refNum) == int(&num)));
 
 	}

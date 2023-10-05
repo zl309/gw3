@@ -89,13 +89,13 @@ int main()
 	/*CChild* pArrChild = new CChild[10];
 	printobject(pArrChild, 10);
 	delete[] pArrChild;*/
-
 	CBase** pArrBase = new CBase * [10]; //포인터로 배열을 생성 아직은 오브젝이 생성되기 전 for문을 돌리면서 실제로 생성
 	for (int i = 0; i < 10; i++)
 	{
 		pArrBase[i] = new CChild;
 
 	}
+	
 	printobject(pArrBase, 10);
 
 	for (int i = 0; i < 10; i++)

@@ -8,7 +8,6 @@
 // 사람 = 포유류 + 지적 기능
 // 사람은 포유류의 기능을 상속받음
 
-
 class CBase
 {
 public:
@@ -97,11 +96,12 @@ int main()
 		pArrBase[i] = new CChild;
 
 	}
+	printobject(pArrBase, 10);
+
 	for (int i = 0; i < 10; i++)
 	{
 		delete pArrBase[i];
 
 	}
 	delete[] pArrBase;
-	printobject(pArrBase, 10);
 }

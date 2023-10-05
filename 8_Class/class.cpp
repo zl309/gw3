@@ -48,7 +48,11 @@ public:
 
 	CMyClass(int valueA=0) : a(valueA), m_b(0), c(0) /// 입력값(int valueA=0)을 지정해줄 수 있다.
 	{
+		if (valueA == 1)
+		{
 		printf("생성자 A 호출됨 \n");
+
+		}
 
 	}
 
@@ -162,18 +166,20 @@ int main()
 
 	CMyClass cMy3;
 	CMyClass cMy4;
-	printf("cMy.a=%d\n", cMy.a);
+	//printf("cMy.a=%d\n", cMy.a);
 	//cMy.a = 0; 
 	cMy.SecC(2);
 	cMy.SecC(29);
 	cMy.SecC(55);
-	cMy.SecC(4); // 특정 변수를 수정하기 위한 함수. c는 private 상태이지만 함수를 선언해놓음으로 메인함수에서 가져다 쓸 수 있다. 
+	cMy.SecC(4);      // 특정 변수를 수정하기 위한 함수. c는 private 상태이지만 함수를 선언해놓음으로 메인함수에서 가져다 쓸 수 있다. 
 								// 특 정 변수를 수정하기 위한 함수를 생성해서 개발하는게 기본 규칙이다.
 	// cMy.c =100; // 만약 변수를 private 상태로 해놨다면 개발자가 직접 접근하지 말라는 의도가 있다는 것.
 
 	cMy = cMy2;
-	cMy.PrintAllValue();
+	//cMy.PrintAllValue();
 	//cMy.a = 1000;
-	cMy4 = cMy - cMy2;
-	cMy4.PrintAllValue();
+	cMy3 = cMy +cMy2;
+	//cMy3.PrintAllValue();
+	CMyClass2 cMy1(1400);
+	//printf("CMyClass2 =%d\n", cMy1.a);
 } // <----파괴자 호출됨.(메인 함수 끝)

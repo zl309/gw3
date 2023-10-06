@@ -63,8 +63,8 @@ int ArraySum(int *arr, int length)
 class CShop
 {
 public:
-	int a;
-	CShop(int m_Value = 0) : a(m_Value)
+	int m_Value;
+	CShop(int Value = 0) : m_Value(Value)
 	{
 
 	}
@@ -74,7 +74,7 @@ public:
 	}
 	void printValue()
 	{
-		printf("Value=%d", a);
+		printf("Value=%d\n", m_Value);
 	}
 private:
 
@@ -90,7 +90,7 @@ private:
 // 생성자 파라메타 : int PhonePrice ( m_PhonePrice에 값 적용 )
 // 맴버 변수 : m_PhoneCnt
 // 맴버 변수 : m_PhonePrice
-// printValue 함수 결과 : "Value=%d"로 m_PhoneCnt * m_PhonePrice출력
+// printValue 함수 결과 : "Value=%d"로 m_PhoneCnt * m_PhonePrice 출력
 
 //CPhoneShop(10, 100) 생성 후 객체에 printValue 출력
 class CPhoneShop : public CShop
@@ -106,6 +106,10 @@ public:
 	{
 
 	}
+	void printValue()
+	{
+		printf("Value=%d\n", m_PhoneCnt * m_PhonePrice);
+	}
 };
 // 클래스 이름 : CFruitShop
 // 생성자 파라메타 : int FruitCnt ( m_FruitCnt에 값 적용 )
@@ -116,7 +120,24 @@ public:
 // printValue 함수 결과 : "Value=%d"로 m_FruitCnt * m_FruitPrice출력
 
 //CFruitShop(10, 100) 생성 후 객체에 printValue 출력
+class CFruitShop : public CShop
+{
 
+public:
+	int m_FruitCnt, m_FruitPrice;
+	CFruitShop(int FuritCnt, int FruitPrice) :m_FruitCnt(FuritCnt), m_FruitPrice(FruitPrice)
+	{
+
+	}
+	~CFruitShop()
+	{
+
+	}
+	void printValue()
+	{
+		printf("Value=%d\n", m_FruitCnt * m_FruitPrice);
+	}
+};
 
 
 int main()
@@ -151,7 +172,12 @@ int main()
 	nresult = ArraySum(arrA, 3);
 	printf("ArraySum=%d\n", nresult);
 
+
 	CShop abc(5);
 	abc.printValue();
+	CPhoneShop efg(10, 100);
+	efg.printValue();
+	CFruitShop hij(10, 1000);
+	hij.printValue();
 
 }

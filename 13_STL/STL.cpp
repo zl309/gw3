@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<vector>
 #include<list>
-
+//===================
 struct stMonster
 {
 	int index = 0; //몬스터 타입.
@@ -11,6 +11,15 @@ bool IsFindMonIndex(const stMonster& mon)
 {
 	return mon.index == 3; // 만약  mon.index 가 3이면 true 반환, 아니면 false 반환.
 }
+//===================
+
+
+
+
+
+
+
+
 
 
 //=======================================

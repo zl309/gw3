@@ -23,24 +23,54 @@ float GetBMI(float weight, float standardWeight)
 int main()
 {
     bool bRun = true;
-
-    ///*while (bRun)
-    //{*/
-  /*  int num3=0;
-    printf("주민번호 앞에 자리를 입력해주세요");
-    scanf_s("%d", &num3);
-    int arnum[6] = { num3/100000, };
-    printf("%d", arnum[1]);*/
-
-   /* switch (num3)
+while (bRun)
     {
-    case :
-    default:
-        break;
-    }
-    */
+    int aaa = 0;
+    printf("주민번호를입력하시겠습니까? 0) No  1)Yes\n");
+    scanf_s("%d", &aaa);
     
-    //}
+    switch (aaa)
+    {
+    case 0:
+        bRun = 0;
+        break;
+    case 1:
+
+        int num3 = 0;
+        printf("주민번호 앞에 자리를 입력해주세요");
+        scanf_s("%d", &num3);
+        int ab, bc, cd, de, ef, fg;
+        ab = num3 / 100000;
+        bc = num3 % 100000 / 10000;
+        cd = num3 % 10000 / 1000;
+        de = num3 % 1000 / 100;
+        ef = num3 % 100 / 10;
+        fg = num3 % 10 / 1;
+        printf("%d %d %d %d %d %d\n", ab, bc,cd,de,ef,fg);
+        
+        int bbb=0, ccc=0;
+        bbb = (cd*10) + de; //월
+        ccc = (ef*10) +fg ;     //일
+        if (bbb > 13)
+        {
+            printf("잘못입력됐습니다.\n");
+        }
+        else if (bbb == 02)
+        {
+            if (ccc > 28)
+            {
+                printf("잘못입력됐습니다.\n");
+
+            }
+        }
+        for (int i = 0; i < 13; i++)
+        {
+            
+        }
+    }
+
+    break;
+   }
 
 
 
@@ -156,43 +186,43 @@ int main()
         20 초과        비만*/
 
 
-    while (bRun)
-    {
+    //while (bRun)
+    //{
 
-        int aa = 0;
-        printf("BMI 를 계산하시겠습니까? 0) No  1)Yes\n");
-        scanf_s("%d", &aa);
-        switch (aa)
-        {
-        case 0:
-            bRun = 0;
-            break;
-        case 1:
-           float bmi, cc;
-           float weight, height;
-            printf("몸무게를 입력해주세요 :\n");
-            scanf_s("%f", &weight);
-            printf("키를 입력해주세요 :\n");
-            scanf_s("%f", &height);
-            cc = standardWeight(height);
-            bmi = GetBMI(weight, cc);
-            if (bmi < 10)
-            {
-                printf("정상\n");
-            }
-            else if (10 < bmi && bmi <= 20)
-            {
-                printf("과체중\n");
+    //    int aa = 0;
+    //    printf("BMI 를 계산하시겠습니까? 0) No  1)Yes\n");
+    //    scanf_s("%d", &aa);
+    //    switch (aa)
+    //    {
+    //    case 0:
+    //        bRun = 0;
+    //        break;
+    //    case 1:
+    //       float bmi, cc;
+    //       float weight, height;
+    //        printf("몸무게를 입력해주세요 :\n");
+    //        scanf_s("%f", &weight);
+    //        printf("키를 입력해주세요 :\n");
+    //        scanf_s("%f", &height);
+    //        cc = standardWeight(height);
+    //        bmi = GetBMI(weight, cc);
+    //        if (bmi < 10)
+    //        {
+    //            printf("정상\n");
+    //        }
+    //        else if (10 < bmi && bmi <= 20)
+    //        {
+    //            printf("과체중\n");
 
-            }
-            else if (bmi >20)
-            {
-                printf("비만\n");
+    //        }
+    //        else if (bmi >20)
+    //        {
+    //            printf("비만\n");
 
 
-            }
-            break;
-           
-        }
-    }
+    //        }
+    //        break;
+    //       
+    //    }
+    //}
 }

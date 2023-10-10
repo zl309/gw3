@@ -51,6 +51,8 @@ while (bRun)
         int bbb=0, ccc=0;
         bbb = (cd*10) + de; //월
         ccc = (ef*10) +fg ;     //일
+        printf("%d월 %d일 \n", bbb,ccc);
+
         if (bbb > 13)
         {
             printf("잘못입력됐습니다.\n");
@@ -63,10 +65,7 @@ while (bRun)
 
             }
         }
-        for (int i = 0; i < 13; i++)
-        {
-            
-        }
+      
     }
 
     break;
@@ -186,6 +185,7 @@ while (bRun)
         20 초과        비만*/
 
 
+
     //while (bRun)
     //{
 
@@ -225,4 +225,5 @@ while (bRun)
     //       
     //    }
     //}
+
 }

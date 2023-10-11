@@ -27,3 +27,5 @@ public:
 	CardMark m_mark;
 	int m_number;
 };
+bool CompareCard(const CCard& CardA, const CCard& CardB);//비교할 함수 만들기.
+

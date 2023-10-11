@@ -28,6 +28,7 @@ void pushStTest(vector<stTest>&vecTest, string& str) //함수를 만들어서 메인 함수
 	string line; //변수를 담을 다른 변수를 선언
 		string aaN="";
 		int bb=0, cc=0, dd=0;
+		
 	while (getline(ssTest, line, ',')) // ','를  기준으로 줄바꿈
 	{
 		line.erase(remove(line.begin(), line.end(), ' '), line.end()); // 띄어쓰기를 제거해준다.
@@ -59,16 +60,17 @@ void pushStTest(vector<stTest>&vecTest, string& str) //함수를 만들어서 메인 함수
 			int result = stoi(cline, &index);
 			dd = result;
 		}
-
-
 	}
-		printf("name=%s,math=%d, eng=%d,lang=%d\n", aaN.c_str(), bb,cc,dd); 
+	
 
+
+		printf("name=%s,math=%d, eng=%d,lang=%d\n", aaN.c_str(), bb,cc,dd); 
+		
 }
 
 int main()
 {
-
+	
 	//파일 쓰기 ==========================================
 	//std::ofstream writeFile;
 	//writeFile.open("test.txt");  // "test.txt" 파일을 연다(파일이 없다면 생선한다.)
@@ -86,8 +88,7 @@ int main()
 	readFile.open("test.txt");
 
 	vector<stTest> vecTest;
-
-
+	
 	//stTest aaa("aaa", 80, 60, 70);
 	//vecTest.push_back(aaa);
 	//stTest bbb("bbb", 90, 30, 40);
@@ -137,6 +138,7 @@ int main()
 		readFile.close();
 	}
 			
+
 
 	for (stTest& test : vecTest)
 	{

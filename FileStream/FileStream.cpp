@@ -12,7 +12,7 @@ struct stTest
 	int m_math = 0;
 	int m_eng = 0;
 	int m_lang = 0;
-	stTest(string name, int math, int eng, int lang) :
+	stTest(string name, int math, int eng, int lang) : //초기화
 		m_name(name), m_math(math), m_eng(eng), m_lang(lang) {
 
 	}
@@ -26,13 +26,12 @@ void pushStTest(vector<stTest>&vecTest, string& str) //함수를 만들어서 메인 함수
 {
 	stringstream ssTest(str); // s 스트림 을 이용해서 변수를 만들고
 	string line; //변수를 담을 다른 변수를 선언
+		string aaN="";
+		int bb=0, cc=0, dd=0;
 	while (getline(ssTest, line, ',')) // ','를  기준으로 줄바꿈
 	{
 		line.erase(remove(line.begin(), line.end(), ' '), line.end()); // 띄어쓰기를 제거해준다.
 		//printf("[%s]\n", line.c_str());
-
-		string aaN;
-		int bb, cc, dd;
 
 		int aaL=line.find('=')+1;
 		string dline = line.substr(0, aaL-1);
@@ -42,25 +41,28 @@ void pushStTest(vector<stTest>&vecTest, string& str) //함수를 만들어서 메인 함수
 		{
 			aaN = cline;
 		}
-		if (dline == "math")
+		else if (dline == "math")
 		{
 			size_t index = 0;
 			int result = stoi(cline, &index);
 			bb = result;
 		}
-		if (dline == "eng")
+		else if (dline == "eng")
 		{
 			size_t index = 0;
 			int result = stoi(cline, &index);
 			cc = result;
 		}
-		if (dline == "lang")
+		else if (dline == "lang")
 		{
 			size_t index = 0;
 			int result = stoi(cline, &index);
-			bb = result;
+			dd = result;
 		}
+
+
 	}
+		printf("name=%s,math=%d, eng=%d,lang=%d\n", aaN.c_str(), bb,cc,dd); 
 
 }
 
@@ -100,10 +102,10 @@ int main()
 
 			std::string str; //문자열 str
 			std::getline(readFile, str); // readFile 의 텍스트를 한 줄 읽어서 str 에 넣는다.
-			printf("str=%s\n", str.c_str()); //출력
+			//printf("str=%s\n", str.c_str()); //출력
 			
 			pushStTest(vecTest, str); //함수를 만들어서 메인 함수의 문자를 가져간다.
-
+		
 			//int pointF = str.find('=')+1; // = 까지의 길이를 포인트 f에 넣는다. 
 			//std::string aaa=str.substr(pointF, str.length() - pointF); //포인트 f에서부터 전체길이에서 포인트 에프를 뺀 길이. 즉 포인트 에프제외 문자
 			//size_t index = 0; //인덱스 선언

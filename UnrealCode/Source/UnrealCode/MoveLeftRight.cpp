@@ -4,7 +4,7 @@
 #include "MoveLeftRight.h"
 
 // Sets default values
-AMoveLeftRight::AMoveLeftRight():  LocX(), IsMoveRight(1)
+AMoveLeftRight::AMoveLeftRight() : LocX(), LocZ(), IsMoveRight(1), IsPlay(false)
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -39,6 +39,7 @@ AMoveLeftRight::AMoveLeftRight():  LocX(), IsMoveRight(1)
 	//{
 	//	StaticMesh->SetStaticMesh(sm.Object); //스태틱 메시 컴포넌트에  스태틱 메시 적용
 	//}
+
 }
 
 // Called when the game starts or when spawned
@@ -53,25 +54,62 @@ void AMoveLeftRight::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime); //오버라이드한 함수인 경우 부모함수를 실행한다.
 	
+	if (IsPlay == false)
+	{
+		return;
+	}
 	//IsMoveRight; //움직일 방향
-	if (IsMoveRight == true)
+	//if (IsMoveRight == true)
+	//{
+	//	LocX += 1; //오른쪽
+	//}
+	//if (IsMoveRight == false)
+	//{
+	//	LocX -= 1; //왼쪽
+	//}
+	//// SetRelativeLocation : 상대적인 위치값을 설정한다.
+	//// FVector : 언리얼에서 사용하는 3차원 좌표 변수
+	//StaticMesh->SetRelativeLocation(FVector(LocX, LocZ,0));
+	//if (LocX>=100)
+	//{
+	//	IsMoveRight = false;
+	//}
+	//if (LocX<=0)
+	//{
+	//	IsMoveRight = true;
+	//}
+	StaticMesh->SetRelativeLocation(FVector(LocX, 0, LocZ));
+	
+
+	
+	/*switch (M_num)
 	{
-		LocX += 1; //오른쪽
-	}
-	if (IsMoveRight == false)
-	{
-		LocX -= 1; //왼쪽
-	}
-	// SetRelativeLocation : 상대적인 위치값을 설정한다.
-	// FVector : 언리얼에서 사용하는 3차원 좌표 변수
-	StaticMesh->SetRelativeLocation(FVector(LocX, 0,0));
-	if (LocX>=100)
-	{
-		IsMoveRight = false;
-	}
-	if (LocX<=0)
-	{
-		IsMoveRight = true;
-	}
+	case AMoveLeftRight::Right:
+		LocX += 1;
+		if(LocX>=100)
+		{
+		break;
+		}
+	case AMoveLeftRight::Up:
+		LocZ += 1;
+		if (LocZ >= 100)
+		{
+			break;
+		}
+	case AMoveLeftRight::Left:
+		LocX -= 1;
+		if (LocX <= 0)
+		{
+			break;
+		}
+	case AMoveLeftRight::Down:
+		LocZ -= 1;
+		if (LocZ <= 0)
+		{
+			break;
+		}
+	default:
+		break;
+	}*/
 }
 

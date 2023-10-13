@@ -12,6 +12,7 @@
 #include "MoveLeftRight.generated.h" 
 
 //  UNREALCODE_API : (두 줄 밑) 이 클래스는 UNREALCODE_API 모듈에 포함된다.
+	
 UCLASS()  //언리얼 클래스 선언 
 class UNREALCODE_API AMoveLeftRight : public AActor  //  public AActor : AAcotr 의 기능을 상속 받겠다. 
 {
@@ -20,6 +21,7 @@ class UNREALCODE_API AMoveLeftRight : public AActor  //  public AActor : AAcotr 
 public:	
 	// Sets default values for this actor's properties
 	AMoveLeftRight();
+	//AMoveLeftRight(MLect M_num=MLect::Right);
 	~AMoveLeftRight()
 	{
 	}
@@ -40,6 +42,8 @@ public:
 	UStaticMeshComponent* StaticMesh;
 
 	float LocX;
+	float LocZ;
 	bool IsMoveRight;
+	bool IsPlay;
 
 };

@@ -58,26 +58,26 @@ void AMoveLeftRight::Tick(float DeltaTime)
 	{
 		return;
 	}
-	//IsMoveRight; //움직일 방향
-	//if (IsMoveRight == true)
-	//{
-	//	LocX += 1; //오른쪽
-	//}
-	//if (IsMoveRight == false)
-	//{
-	//	LocX -= 1; //왼쪽
-	//}
-	//// SetRelativeLocation : 상대적인 위치값을 설정한다.
-	//// FVector : 언리얼에서 사용하는 3차원 좌표 변수
-	//StaticMesh->SetRelativeLocation(FVector(LocX, LocZ,0));
-	//if (LocX>=100)
-	//{
-	//	IsMoveRight = false;
-	//}
-	//if (LocX<=0)
-	//{
-	//	IsMoveRight = true;
-	//}
+	IsMoveRight; //움직일 방향
+	if (IsMoveRight == true)
+	{
+		LocX += 1; //오른쪽
+	}
+	if (IsMoveRight == false)
+	{
+		LocX -= 1; //왼쪽
+	}
+	// SetRelativeLocation : 상대적인 위치값을 설정한다.
+	// FVector : 언리얼에서 사용하는 3차원 좌표 변수
+	StaticMesh->SetRelativeLocation(FVector(LocX, LocZ,0));
+	if (LocX>=100)
+	{
+		IsMoveRight = false;
+	}
+	if (LocX<=0)
+	{
+		IsMoveRight = true;
+	}
 	StaticMesh->SetRelativeLocation(FVector(LocX, 0, LocZ));
 	
 

@@ -3,8 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"   //컴파일 속도를 빠르게 하기위해 기본적인 최소한의 라이브러리만 포함한 헤더
+#include "Public/Tools/InterfacePlayObj.h"
 #include "GameFramework/Actor.h" //AAcotr 클래스 헤더파일
-
 
  //AMoveLeftRight 생성 처리하는 헤더 (   *.generated.h    보통은 이런 이름이다)
  // 모든 언리얼 클래스가 생성되려면  아래 코드를 넣어줘야 된다.
@@ -14,7 +14,7 @@
 //  UNREALCODE_API : (두 줄 밑) 이 클래스는 UNREALCODE_API 모듈에 포함된다.
 	
 UCLASS()  //언리얼 클래스 선언 
-class UNREALCODE_API AMoveLeftRight : public AActor  //  public AActor : AAcotr 의 기능을 상속 받겠다. 
+class UNREALCODE_API AMoveLeftRight : public AActor , public IInterfacePlayObj //  public AActor : AAcotr 의 기능을 상속 받겠다. 
 {
 	GENERATED_BODY() //언리얼 코드  생성 함수 : 언리얼 클래스 생성 기본 규칙
 	
@@ -34,6 +34,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+public:
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void Code_DoPlay(bool IsPlay); //블루프린트 호출용 함수명 선언
+	
+	virtual void Code_DoPlay_Implementation(bool IsPlay) override; //c++에서 실행될 함수
+
+
+public:
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	USceneComponent* Scene;
 
@@ -41,9 +50,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMesh;
 
-	float LocX;
-	float LocZ;
-	bool IsMoveRight;
-	bool IsPlay;
+	float m_LocX;
+	float m_LocZ;
+	bool m_IsMoveRight;
+	bool m_IsPlay;
 
 };

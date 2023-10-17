@@ -2,7 +2,7 @@
 
 
 #include "MoveLeftRight.h"
-
+#include "Switch.h"
 // Sets default values
 AMoveLeftRight::AMoveLeftRight() : m_LocX(), m_LocZ(), m_IsMoveRight(1), m_IsPlay(false)
 {
@@ -46,7 +46,8 @@ AMoveLeftRight::AMoveLeftRight() : m_LocX(), m_LocZ(), m_IsMoveRight(1), m_IsPla
 void AMoveLeftRight::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	if (IsValid(m_Switch))
+		m_Switch->FDele_EventOverlap.AddDynamic(this,&AMoveLeftRight::EventOverlap);
 }
 
 // Called every frame
@@ -111,6 +112,11 @@ void AMoveLeftRight::Tick(float DeltaTime)
 	default:
 		break;
 	}*/
+}
+
+void AMoveLeftRight::EventOverlap(bool isBegin)
+{
+	m_IsPlay = isBegin;
 }
 
 void AMoveLeftRight::Code_DoPlay_Implementation(bool IsPlay)

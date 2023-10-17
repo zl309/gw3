@@ -34,6 +34,10 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UFUNCTION()
+	void EventOverlap(bool isBegin);
+
+
 public:
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void Code_DoPlay(bool IsPlay); //블루프린트 호출용 함수명 선언
@@ -49,6 +53,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMesh;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+   TObjectPtr<class ASwitch>m_Switch;
 
 	float m_LocX;
 	float m_LocZ;
